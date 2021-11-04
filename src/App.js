@@ -1,9 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 function App() {
   return (
-    <h1>Hello World</h1>
+    <Container>
+      <Row>
+        <Col><h1>Hello World</h1></Col>
+      </Row>
+    </Container>
+
   );
 }
 
