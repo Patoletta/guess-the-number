@@ -4,13 +4,14 @@ import {Button as RBButton} from "react-bootstrap";
 
 export const Button = (props) => {
     return (
-        <RBButton variant={props.variant}>{props.label}</RBButton>
+        <RBButton variant={props.variant} onClick={props.onClick}>{props.label}</RBButton>
     );
 };
 
 Button.propTypes = {
     variant: PropTypes.string, 
-    label: PropTypes.string
+    label: PropTypes.string,
+    onClick: PropTypes.func
 };
 Button.defaultProps = {
     variant: "light",
