@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Button from "./components/Button";
+import Button from "../components/Button";
+import Title from "../components/Title";
 
 function App() {
   const handleIncrement = () => {
@@ -12,7 +13,7 @@ function App() {
     <Container>
       <Row>
         <Col>
-          <h1>Hello World!</h1>
+          <Title label="Good morning y'all!" background="yellow"/>
           <Row>
             <Col><Button label="Incrementa" variant="success" onClick={handleIncrement}/></Col>
             <Col><Button label="Decrementa" variant="danger" onClick={handleDecrement}/></Col>
