@@ -6,3 +6,4 @@
 + Inizio tests react
 + Inserimento titolo + test
 + Configurazioni docker
++ Configurazioni CI/CD (Semaphore)
