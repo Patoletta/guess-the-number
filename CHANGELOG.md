@@ -1,6 +1,7 @@
 # Next Version
 + Configurazioni deploy Semaphore
 + Fix semaphore
++ Implementazione function randomNumber e aggiunta coverAll
 
 ## 0.1.0
 + Aggiungo roba

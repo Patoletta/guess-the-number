@@ -9,6 +9,7 @@ agent:
 global_job_config:
   secrets:
     - name: SONARCLOUD
+    - name: GUESS_THE_NUMBER
   prologue:
     commands:
       - checkout
@@ -44,9 +45,9 @@ blocks:
           - cache restore
           - CI=true npm run coverage
       jobs:
-      #   - name: Coverage
-      #     commands:
-      #       - cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
+        - name: Coverage
+          commands:
+            - cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
         - name: Sonarcloud
           commands:
             - docker run --rm -e SONAR_HOST_URL="https://sonarcloud.io" -e SONAR_LOGIN=$SONAR_AUTH_TOKEN -v "/home/semaphore/guess-the-number:/usr/src" sonarsource/sonar-scanner-cli:4.6
