@@ -21,7 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": "CI=true ENV=test react-scripts test --coverage"
+    "coverage": "CI=true ENV=test react-scripts test --coverage",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "eslintConfig": {
     "extends": [
