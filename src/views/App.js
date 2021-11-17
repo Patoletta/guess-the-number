@@ -1,17 +1,16 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Button from "../components/Button";
 import Title from "../components/Title";
+import { DashboardPage } from "./Dashboard/DashboardPage";
+
 
 function App() {
   return (
     <Container>
       <Row>
         <Col>
-          <Title label="Good morning y'all!" background="yellow"/>
+          <Title label="Good morning y'all!" background="yellow" />
           <Row>
-            <Col><Button label="Incrementa" variant="success"/></Col>
-            <Col><Button label="Decrementa" variant="danger"/></Col>
-            <Col><Button/></Col>
+            <Col><DashboardPage /></Col>
           </Row>
         </Col>
       </Row>
