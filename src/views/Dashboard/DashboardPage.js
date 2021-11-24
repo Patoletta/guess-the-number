@@ -9,14 +9,17 @@ export const DashboardPage = (props) => {
     const [currentNumber, setCurrentNumber] = useState(null);
     const [insertedNumber, setInsertedNumber] = useState(null);
     const [result, setResult] = useState(null);
+    const [arrayNumbers, setArrayNumbers] = useState([]);
+
+    const {testNumber} = props;
 
     useEffect(() => {
         const rnd = randomNumber();
         if (!mounted) {
-            setCurrentNumber(props.testNumber ? props.testNumber : rnd);
+            setCurrentNumber(testNumber ? testNumber : rnd);
             setMounted(true);
         }
-    }, [mounted]);
+    }, [mounted, testNumber]);
 
     const handleChange = (e) => {
         setInsertedNumber(e.target.value);
@@ -24,16 +27,18 @@ export const DashboardPage = (props) => {
 
     const handleClick = (e) => {
         e.preventDefault();
+        setArrayNumbers([...arrayNumbers, insertedNumber]);
         setResult("Oops, ritenta! era " + currentNumber)
         if (parseInt(insertedNumber) === parseInt(currentNumber)) {
             setResult("EVVIVA hai vinto!");
         }
     }
-
+    
     return (
         <>
-            <h2>{insertedNumber}</h2>
-            <h2>{currentNumber}</h2>
+            <h2>Storico tentativi: {arrayNumbers.map(e => e + " ")}</h2>
+            <h2>Ora hai inserito il numero: {insertedNumber}</h2>
+            <h2>La soluzione è: {currentNumber}</h2>
             <Form>
                 <Form.Group controlId="formGTN">
                     <Form.Label>Guess the number:</Form.Label>
